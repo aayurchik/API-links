@@ -1,0 +1,34 @@
+# Фреймворк и сервер
+fastapi[all]==0.115.8 # FastAPI + все допы jinja2, etc.
+uvicorn[standard]==0.34.0 # ASGI-сервер для запуска
+
+# База данных
+sqlalchemy==2.0.37 # ORM
+asyncpg==0.29.0 # асинхронный драйвер для PostgreSQL
+psycopg2-binary==2.9.10 # синхронный драйвер для Alembic
+alembic==1.14.1 # миграции
+fastapi-users[sqlalchemy]==15.0.4
+fastapi-users-db-sqlalchemy==7.0.0
+
+# Аутентификация и безопасность
+python-jose[cryptography]==3.3.0  # JWT
+passlib[bcrypt]==1.7.4 # хеширование паролей
+python-multipart>=0.0.18 # для обработки form-data (логин)
+
+# Redis и кэширование
+redis==4.6.0
+fastapi-cache2[redis]==0.2.1 # декораторы для кэширования
+
+# Конфигурация
+python-dotenv==1.0.1  # загрузка .env
+
+# Для деплоя (Render использует gunicorn)
+gunicorn==21.2.0
+
+# Тестирование
+pytest==8.2.2
+pytest-asyncio==0.23.6
+httpx==0.27.0
+
+celery==5.4.0
+flower==2.0.1
