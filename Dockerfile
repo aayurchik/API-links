@@ -9,4 +9,5 @@ COPY . .
 
 ENV PYTHONPATH=/app
 
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Миграции и запуск приложения с портом из переменной окружения Render
+CMD alembic upgrade head && uvicorn src.main:app --host 0.0.0.0 --port $PORT
