@@ -31,51 +31,51 @@ services:
       timeout: 5s
       retries: 5
 
-  celery:
-    build: .
-    container_name: celery_app
-    command: celery -A src.tasks.celery worker --loglevel=info
-    depends_on:
-      - redis
-    env_file:
-      - .env
-    environment:
-      - REDIS_HOST=redis
-      - DB_HOST=postgres
-    volumes:
-      - .:/app
+  # celery:
+  #   build: .
+  #   container_name: celery_app
+  #   command: celery -A src.tasks.celery worker --loglevel=info
+  #   depends_on:
+  #     - redis
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - REDIS_HOST=redis
+  #     - DB_HOST=postgres
+  #   volumes:
+  #     - .:/app
 
-  celery-beat:
-    build: .
-    container_name: celery_beat
-    command: celery -A src.tasks.celery beat --loglevel=info
-    depends_on:
-      - redis
-      - celery
-    env_file:
-      - .env
-    environment:     
-      - REDIS_HOST=redis
-      - DB_HOST=postgres
-    volumes:
-      - .:/app
+  # celery-beat:
+  #   build: .
+  #   container_name: celery_beat
+  #   command: celery -A src.tasks.celery beat --loglevel=info
+  #   depends_on:
+  #     - redis
+  #     - celery
+  #   env_file:
+  #     - .env
+  #   environment:     
+  #     - REDIS_HOST=redis
+  #     - DB_HOST=postgres
+  #   volumes:
+  #     - .:/app
 
-  flower:
-    build: .
-    container_name: flower_app
-    command: celery -A src.tasks.celery flower --port=5555
-    ports:
-      - "5555:5555"
-    depends_on:
-      - redis
-      - celery
-    env_file:
-      - .env
-    environment:   
-      - REDIS_HOST=redis
-      - DB_HOST=postgres
-    volumes:
-      - .:/app
+  # flower:
+  #   build: .
+  #   container_name: flower_app
+  #   command: celery -A src.tasks.celery flower --port=5555
+  #   ports:
+  #     - "5555:5555"
+  #   depends_on:
+  #     - redis
+  #     - celery
+  #   env_file:
+  #     - .env
+  #   environment:   
+  #     - REDIS_HOST=redis
+  #     - DB_HOST=postgres
+  #   volumes:
+  #     - .:/app
 
   app:
     build: .
