@@ -4,7 +4,7 @@
 
 **Документация Swagger:** [https://api-links.onrender.com/docs](https://api-links.onrender.com/docs)  
 
-Для деплоя используется отдельная ветка render-deploy, адаптированная под бесплатный тариф (без Celery).
+Для деплоя используется отдельная ветка `new` , адаптированная под бесплатный тариф (без Celery).
 
 ---
 
