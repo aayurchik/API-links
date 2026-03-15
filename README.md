@@ -108,15 +108,15 @@
     
 3. Пример содержимого файла .env:  
     ```ini
-    DB_USER=postgres        # Пользователь PostgreSQL
-    DB_PASS=password        # Пароль PostgreSQL
-    DB_NAME=shortlink       # Имя БД
-    DB_HOST=localhost       # Хост БД
-    DB_PORT=5432            # Порт БД
-    REDIS_HOST=localhost    # Хост Redis
-    REDIS_PORT=6379         # Порт Redis
-    SECRET_KEY=your-secret-key-here  # Ключ для JWT
-    CLEANUP_DAYS=30         # Дней неиспользования для удаления
+    DB_USER=postgres  
+    DB_PASS=password  
+    DB_NAME=shortlink  
+    DB_HOST=localhost 
+    DB_PORT=5432  
+    REDIS_HOST=localhost  
+    REDIS_PORT=6379  
+    SECRET_KEY=your-secret-key-here  
+    CLEANUP_DAYS=30  
 
 4. Запустите контейнеры:
 
